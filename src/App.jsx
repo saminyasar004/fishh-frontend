@@ -23,17 +23,16 @@ import "@ionic/react/css/display.css";
 import "./styles/styles.css";
 import "./styles/ionic_variables.css";
 
+import Welcome from "./pages/Welcome";
+
 setupIonicReact();
 
 const App = () => (
     <IonApp>
         <IonReactRouter>
             <IonRouterOutlet>
-                <Route exact path="/home">
-                    <Home />
-                </Route>
                 <Route exact path="/">
-                    <Redirect to="/home" />
+                    <Welcome />
                 </Route>
             </IonRouterOutlet>
         </IonReactRouter>

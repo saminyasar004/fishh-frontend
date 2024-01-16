@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../../assets//fonts/poppins/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../assets//fonts/poppins/Poppins-Regular.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../assets//fonts/poppins/Poppins-Medium.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../assets//fonts/poppins/Poppins-SemiBold.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../assets//fonts/poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../../assets//fonts/poppins/Poppins-ExtraBold.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../../assets//fonts/poppins/Poppins-Black.ttf") format("truetype");
+}
+
+/* common */
+*,
+*::before,
+*::after {
+    @apply font-poppins;
+}
+
+/* Welcome page */
+.welcome-header-1 {
+    text-shadow: 2px 2px #2499bc;
+}
+
+.welcome-header-2 {
+    text-shadow: 2px 2px #bf3b93;
+}

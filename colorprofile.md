@@ -15,4 +15,6 @@ secondary-foreground: #FCEEF7
 tertiary: #6D6817
 tertiary-foreground: #FCEEF7
 
+modal-shadow: -3px -3px 60px #A5337F inset
+
 ## Light Theme

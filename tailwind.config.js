@@ -79,6 +79,16 @@ module.exports = {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
+            fontFamily: {
+                poppins: ['"Poppins"', "sans-serif"],
+            },
+            backgroundImage: {
+                "welcome-bg":
+                    "url('../assets/images/emojis.svg'), linear-gradient(0deg, #000, #000)",
+            },
+            boxShadow: {
+                modal: "-3px -3px 60px #A5337F inset",
+            },
         },
     },
     plugins: [require("tailwindcss-animate")],

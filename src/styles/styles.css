@@ -62,6 +62,10 @@
     @apply font-poppins;
 }
 
+.row {
+    @apply w-row-sm max-w-md m-auto;
+}
+
 /* Welcome page */
 .welcome-header-1 {
     text-shadow: 2px 2px #2499bc;

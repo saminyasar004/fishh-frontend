@@ -90,7 +90,7 @@ module.exports = {
                 modal: "-3px -3px 60px #A5337F inset",
             },
             width: {
-                "row-sm": "calc(100% - 3rem)",
+                "row-sm": "calc(100% - 2rem)",
                 row: "calc(100% - 1rem)",
                 100: "30rem",
             },

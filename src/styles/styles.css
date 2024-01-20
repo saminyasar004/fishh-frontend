@@ -55,22 +55,54 @@
     src: url("../../assets//fonts/poppins/Poppins-Black.ttf") format("truetype");
 }
 
-/* common */
+/* ======= Common Styling ======= */
+
 *,
 *::before,
 *::after {
     @apply font-poppins;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 .row {
     @apply w-row-sm max-w-md m-auto;
 }
 
-/* Welcome page */
+ion-refresher.refresher-native {
+    @apply z-50 !important;
+}
+
+/* ======= Welcome Page ======= */
+
 .welcome-header-1 {
     text-shadow: 2px 2px #2499bc;
 }
 
 .welcome-header-2 {
     text-shadow: 2px 2px #bf3b93;
+}
+
+/* ======= Swiper ======= */
+
+.swiper {
+    @apply w-full h-full px-4 !important;
+}
+
+.swiper-slide {
+    @apply text-center text-lg flex items-center justify-center h-auto !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    @apply bg-gray-300 opacity-100;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    @apply w-3 h-3 bg-primary;
+}
+
+/* ======= Chat List ======= */
+
+.body-content::-webkit-scrollbar {
+    @apply hidden;
 }

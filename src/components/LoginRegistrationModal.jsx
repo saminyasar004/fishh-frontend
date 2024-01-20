@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,6 +17,7 @@ import { DialogDescription } from "@radix-ui/react-dialog";
 import OTP from "./OTP";
 
 const LoginRegistrationModal = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
     const [formType, setFormType] = useState("registration"); // login|registration|otp
     const [passwordVisibility, setPasswordVisibility] = useState("off"); // on|off
     const [error, setError] = useState("");
@@ -95,8 +96,6 @@ const LoginRegistrationModal = () => {
             setError("");
         }
 
-        console.log(fieldValues);
-
         if (canSendOTP === true) {
             setFormType("otp");
         }
@@ -104,7 +103,7 @@ const LoginRegistrationModal = () => {
 
     return (
         <>
-            <Dialog>
+            <Dialog open={isModalOpen} onOpenChange={setModalOpen}>
                 <DialogTrigger asChild>
                     <Button
                         variant="tertiary"
@@ -135,13 +134,15 @@ const LoginRegistrationModal = () => {
                             {formType === "otp" ? (
                                 <DialogDescription className="text-sm font-medium text-center w-full">
                                     We've sent an OTP on your email, that starts
-                                    with said***
+                                    with said*** 1234
                                 </DialogDescription>
                             ) : null}
                         </div>
                     </DialogHeader>
                     <div className="w-full flex items-center justify-center flex-col gap-4">
-                        {formType === "otp" ? <OTP /> : null}
+                        {formType === "otp" ? (
+                            <OTP onSubmit={() => setModalOpen(false)} />
+                        ) : null}
 
                         {["registration", "login"].includes(formType) ? (
                             <div className="w-full flex items-center justify-center relative">

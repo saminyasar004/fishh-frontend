@@ -10,8 +10,8 @@ const Welcome = () => {
         <>
             <IonPage>
                 <IonContent>
-                    <div className="w-full min-h-screen max-h-min bg-welcome-bg bg-no-repeat bg-center">
-                        <div className="flex items-start justify-center flex-col row">
+                    <div className="w-full h-svh bg-welcome-bg bg-no-repeat bg-center">
+                        <div className="row h-full flex items-start justify-center flex-col px-3">
                             <div className="flex items-center justify-center w-full">
                                 <img
                                     src={Logo}

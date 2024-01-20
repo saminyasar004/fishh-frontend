@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
+import { useIonRouter } from "@ionic/react";
 
-const OTP = () => {
-    const [otp, setOtp] = useState("");
+const OTP = ({ onSubmit }) => {
+    const router = useIonRouter();
+    const CORRECT_OTP = "1234";
     const OTP_MAX_LENGTH = 4;
+    const [otp, setOtp] = useState("");
     const inputRefs = useRef([]);
 
     const handleInputChange = (index, event) => {
@@ -37,6 +40,20 @@ const OTP = () => {
     useEffect(() => {
         if (otp.length === OTP_MAX_LENGTH) {
             console.log("OTP Inserted!!!");
+            console.log("otp is: ", otp);
+
+            // TODO: match the inserted otp with the correct otp got from the server.
+
+            if (otp.toString() === CORRECT_OTP) {
+                setTimeout(() => {
+                    console.log("redirecting...");
+
+                    // close the modal
+                    onSubmit();
+                    // redirect the user into chat page
+                    router.push("/chat");
+                }, 3000);
+            }
         }
     }, [otp]);
 

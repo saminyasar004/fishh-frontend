@@ -59,17 +59,34 @@ const OTP = ({ onSubmit }) => {
 
     return (
         <div className="flex items-center justify-center gap-4 pb-6 pt-6">
-            {Array.from({ length: OTP_MAX_LENGTH }, (_, i) => (
-                <Input
-                    key={i}
-                    type="number"
-                    ref={(el) => (inputRefs.current[i] = el)}
-                    value={otp.charAt(i) || ""}
-                    maxLength={1}
-                    onChange={(e) => handleInputChange(i, e)}
-                    className="w-10 h-12 bg-primary text-primary-foreground text-center ring-[3px] ring-border rounded-md focus:outline-none focus:ring-accent font-medium text-base"
-                />
-            ))}
+            {Array.from({ length: OTP_MAX_LENGTH }, (_, i) => {
+                if (i === 0) {
+                    return (
+                        <Input
+                            autoFocus={true}
+                            key={i}
+                            type="number"
+                            ref={(el) => (inputRefs.current[i] = el)}
+                            value={otp.charAt(i) || ""}
+                            maxLength={1}
+                            onChange={(e) => handleInputChange(i, e)}
+                            className="w-10 h-12 bg-primary text-primary-foreground text-center ring-[3px] ring-border rounded-md focus:outline-none focus:ring-accent font-medium text-base"
+                        />
+                    );
+                } else {
+                    return (
+                        <Input
+                            key={i}
+                            type="number"
+                            ref={(el) => (inputRefs.current[i] = el)}
+                            value={otp.charAt(i) || ""}
+                            maxLength={1}
+                            onChange={(e) => handleInputChange(i, e)}
+                            className="w-10 h-12 bg-primary text-primary-foreground text-center ring-[3px] ring-border rounded-md focus:outline-none focus:ring-accent font-medium text-base"
+                        />
+                    );
+                }
+            })}
         </div>
     );
 };

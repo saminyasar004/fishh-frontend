@@ -106,3 +106,14 @@ ion-refresher.refresher-native {
 .body-content::-webkit-scrollbar {
     @apply hidden;
 }
+
+.chatBox {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 2rem;
+    height: 2rem;
+    background: #1dd881;
+    transform: rotate(90deg);
+    z-index: 1;
+    top: 0;
+    left: 0;
+}

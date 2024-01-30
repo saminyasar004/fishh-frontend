@@ -24,6 +24,7 @@ import "./styles/ionic_variables.css";
 
 import Welcome from "./pages/Welcome";
 import ChatList from "./pages/ChatList";
+import Inbox from "./pages/Inbox";
 
 setupIonicReact();
 
@@ -36,6 +37,9 @@ const App = () => (
                 </Route>
                 <Route exact path="/chat">
                     <ChatList />
+                </Route>
+                <Route exact path="/inbox">
+                    <Inbox />
                 </Route>
             </IonRouterOutlet>
         </IonReactRouter>
